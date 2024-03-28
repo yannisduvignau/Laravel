@@ -1,0 +1,64 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+main{
+    padding:0 50px;
+}
+.containerPasSauce{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pasDeSauce{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.afficheSauce{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        font-size: 16px;
+        padding: 20px 0;
+    }
+    img{
+        width: 225px;
+        height: 225px;
+    }
+    .containerSauce{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 5px;
+        /* border: 1px solid black; */
+        h2{
+            font-weight: bold;
+        }
+    }
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .heat{
+        font-weight: 300;
+    }
+    button{
+        padding: 5px 20px;
+        background-color: aliceblue;
+        /* font-weight: bold; */
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+}
