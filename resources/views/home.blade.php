@@ -39,10 +39,9 @@
                     <div class="heat" style="color: {{ $sauce->heat >= 8 ? 'red' : ($sauce->heat >= 5 ? 'orange' : 'green') }};">
                         Heat:{{ $sauce->heat }}/10
                     </div>
-                    <a href="sauce/{{$sauce['id']}}"><button>Détails</button></a>
+                    <a href="{{ route('sauce', ['id' => $sauce->id]) }}"><button>Détails</button></a>
                 </div>
 
-                {{-- <li><a href="{{$sauce['userId']}}">{{$sauce['name']}}</a></li> --}}
             @endforeach
         </ul>
     </div>

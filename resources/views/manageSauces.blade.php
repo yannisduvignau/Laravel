@@ -21,8 +21,8 @@
         <ul>
             @foreach ($sauces as $sauce)
                 <li>
-                    {{ $sauce->name }} 
-                    <a href="{{ url('/AllSauces/'.$sauce->id.'/edit' ) }}" class="btn btn-primary">Modifier</a>
+                    {{ $sauce->name }}
+                    <a href="{{ route('AllSauces.edit',['id' => $sauce->id] ) }}" class="btn btn-primary">Modifier</a>
                     <!-- Bouton de suppression avec fenêtre modale de confirmation -->
                     <button class="btn btn-danger" onclick="openModal('{{ $sauce->id }}')">Supprimer</button>
                     
@@ -39,7 +39,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" onclick="closeModal('{{ $sauce->id }}')">Annuler</button>
                                     <!-- Formulaire de suppression -->
-                                    <form action="{{ route('AllSauces.destroy', $sauce->id) }}" method="POST" style="display: inline;">
+                                    <form action="{{ route('AllSauces.destroy', ['id' => $sauce->id]) }}" method="POST" style="display: inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Supprimer</button>
