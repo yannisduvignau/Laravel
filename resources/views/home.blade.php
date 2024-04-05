@@ -43,6 +43,8 @@
                 </div>
 
             @endforeach
+            <!-- Afficher les liens de pagination -->
+            {{-- {{ $sauces->links() }} --}}
         </ul>
     </div>
 @endif

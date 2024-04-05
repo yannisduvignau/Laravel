@@ -14,9 +14,9 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/sauce/{id}', [HomeController::class, 'show'])->name('sauce');
-Route::get('/addSauce', [HomeController::class, 'addSauce'])->name('addSauce');
+Route::get('/addSauce', [PostManageSauceController::class, 'addSauce'])->name('addSauce');
 
-Route::post('/addSauce/traitement', [PostSauceController::class, 'store'])->name('addSauce/traitement');
+Route::post('/addSauce/traitement', [PostManageSauceController::class, 'store'])->name('addSauce/traitement');
 
 Route::get('/AllSauces', [PostManageSauceController::class, 'index'])->name('AllSauces.index');
 

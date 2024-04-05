@@ -23,11 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $sauces = Sauce::all();
-        return view('home',[
-            'sauces'=>$sauces
-        ]);
-        /* RECUPERER LES SAUCES ICI */
+        // Paginer les sauces avec 4 sauces par page
+        $sauces = Sauce::paginate(4);
+        
+        // Retourner la vue avec les sauces paginées
+        return view('home', ['sauces' => $sauces])->with('i', (request()->input('page', 1) - 1) * 4);
     }
 
     public function show($id){
@@ -38,11 +38,4 @@ class HomeController extends Controller
         /* RECUPERER LA SAUCE SELECTIONNE ICI */
     }
 
-    public function addSauce(){
-        return view("addSauce");
-    }
-
-    public function AllSauces(){
-        return view("manageSauces");
-    }
 }
