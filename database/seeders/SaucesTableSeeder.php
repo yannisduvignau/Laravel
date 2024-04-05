@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+use App\Models\Sauce;
 
 class SaucesTableSeeder extends Seeder
 {
@@ -15,10 +15,10 @@ class SaucesTableSeeder extends Seeder
     public function run(): void
     {
         //
-        DB::table('sauces')->insert([
+        Sauce::factory()->create([
         [
             'id' => 1,
-            'userId' => Auth::user()->id,
+            'userId' => 1,
             'name' => 'sauce 1',
             'manufacturer' => 'sauce 1',
             'description' => 'sauce 1',
@@ -27,14 +27,14 @@ class SaucesTableSeeder extends Seeder
             'heat' => '9',
             'likes' => 0,
             'dislikes' => 0,
-            'usersLiked' => [],
-            'usersDisliked' => [],
+            'usersLiked' => json_encode([]),
+            'usersDisliked' => json_encode([]),
             'created_at' => now(),
             'updated_at' => now()
         ],
         [
             'id' => 2,
-            'userId' => Auth::user()->id,
+            'userId' => 1,
             'name' => 'sauce 2',
             'manufacturer' => 'sauce 2',
             'description' => 'sauce 2',
@@ -43,8 +43,8 @@ class SaucesTableSeeder extends Seeder
             'heat' => '5',
             'likes' => 0,
             'dislikes' => 0,
-            'usersLiked' => [],
-            'usersDisliked' => [],
+            'usersLiked' => json_encode([]),
+            'usersDisliked' => json_encode([]),
             'created_at' => now(),
             'updated_at' => now()
         ]

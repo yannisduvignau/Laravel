@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <h1>Modifier la Sauce</h1>
-        <form action="{{ route('AllSauce.update', ['id',$sauce->id]) }}" method="POST">
+        <form action="{{ route('AllSauce.update', ['id', $sauce->id ]) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">
